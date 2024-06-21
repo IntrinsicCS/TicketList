@@ -13,7 +13,7 @@ const ResourceRequestForm = ({ addRequest, onClose, isOpen }) => {
     if (!isOpen) {
         return null;
     }
-    
+
     const handleSubmit = (e) => {
         e.preventDefault();
         const ticketNum = uuidv4();
@@ -40,36 +40,38 @@ const ResourceRequestForm = ({ addRequest, onClose, isOpen }) => {
                         <label>Recipient:</label>
                         <select value={recipient} onChange={(e) => setRecipient(e.target.value)}>
                             <option value="">Select Recipient</option>
-                            <option value="Alice">Alice</option>
-                            <option value="Bob">Bob</option>
-                            <option value="Charlie">Charlie</option>
+                            <option value="Della Barr">Della Barr</option>
+                            <option value="Nellie Adams">Nellie Adams</option>
+                            <option value="Ray Moore">Ray Moore</option>
                         </select>
                     </div>
                     <div className="form-group">
                         <label>Work Item:</label>
                         <select value={workItem} onChange={(e) => setWorkItem(e.target.value)}>
                             <option value="">Select Work Item</option>
-                            <option value="Project A">Project A</option>
-                            <option value="Project B">Project B</option>
-                            <option value="Project C">Project C</option>
+                            <option value="ABC 3003">ABC 3003</option>
+                            <option value="PUP D5">PUP D5</option>
+                            <option value="Assay Study 1">Assay Study 1</option>
                         </select>
                     </div>
                     <div className="form-group">
                         <label>Activity:</label>
                         <select value={activity} onChange={(e) => setActivity(e.target.value)}>
                             <option value="">Select Activity</option>
-                            <option value="Development">Development</option>
-                            <option value="Testing">Testing</option>
-                            <option value="Deployment">Deployment</option>
+                            <option value="Early Submission">Early Submission</option>
+                            <option value="Start-Up">Start-Up</option>
+                            <option value="In-Life">In-Life</option>
+                            <option value="Close-Out">Close-Out</option>
                         </select>
                     </div>
                     <div className="form-group">
                         <label>Role:</label>
                         <select value={role} onChange={(e) => setRole(e.target.value)}>
                             <option value="">Select Role</option>
-                            <option value="Developer">Developer</option>
-                            <option value="Tester">Tester</option>
-                            <option value="Manager">Manager</option>
+                            <option value="Clinical Trial Manager">Clinical Trial Manager</option>
+                            <option value="Clinical Research Associate">Clinical Research Associate</option>
+                            <option value="Medical Writer">Medical Writer</option>
+                            <option value="Data Manager">Data Manager</option>
                         </select>
                     </div>
                     <div className="form-group">
