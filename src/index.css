@@ -92,18 +92,19 @@ button[type="button"] {
 }
 
 .create-ticket-button {
-  background-color: #333;
+  background-color: #2b7e57;
   color: white;
   padding: 10px 20px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
   margin: 20px;
+  align-self: flex-start;
 }
 
 table {
-  width: 90%;
-  margin: 20px auto;
+  width: 100%;
+  margin: 10px auto;
   border-collapse: collapse;
   font-size: 14px;
   color: #0056b3; /* Blue font color */
@@ -120,7 +121,7 @@ th, td {
 }
 
 th {
-  background-color: #333;
+  background-color: #18aa99;
   color: white;
 }
 
