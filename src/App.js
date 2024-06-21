@@ -35,15 +35,15 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <RequestTable requests={requests} />
         {!isFormVisible && (
           <button onClick={handleCreateTicket} className="create-ticket-button">
-            Create Ticket
+            Request Resource
           </button>
         )}
         {isFormVisible && (
           <ResourceRequestForm addRequest={addRequest} onClose={handleCloseForm} />
         )}
+        <RequestTable requests={requests} />
       </header>
     </div>
   );
