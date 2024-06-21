@@ -14,7 +14,7 @@ function App() {
 
   const addRequest = (newRequest) => {
     const updatedRequests = [...requests, newRequest];
-    setRequests(updatedRequests, { ...newRequest, status: 'In Progress' }); // Default status set to 'In Progress'
+    setRequests(updatedRequests, { ...newRequest, status: 'Submitted' }); // Default status set to 'In Progress'
     localStorage.setItem('requests', JSON.stringify(updatedRequests));
     setIsFormVisible(false); // Hide form after submission
   };
@@ -27,10 +27,6 @@ function App() {
     setIsFormVisible(false);
   };
 
-  const handleRemoveAll = () => {
-    localStorage.setItem('requests', JSON.stringify([""]));
-  };
-
 
   return (
     <div className="App">
@@ -41,7 +37,7 @@ function App() {
           </button>
         )}
         {isFormVisible && (
-          <ResourceRequestForm addRequest={addRequest} onClose={handleCloseForm} />
+          <ResourceRequestForm addRequest={addRequest} onClose={handleCloseForm} isOpen={isFormVisible} />
         )}
         <RequestTable requests={requests} />
       </header>
