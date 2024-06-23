@@ -27,9 +27,8 @@ form {
   border-radius: 8px;
   max-width: 500px;
   width: 100%;
-  margin: 20px auto;
   text-align: left;
-  color: #0056b3; /* Blue font color */
+  color: #2b7e57; /* Blue font color */
 }
 
 .modal-overlay {
@@ -62,10 +61,10 @@ select, textarea, input[type="text"] {
   width: calc(100% - 16px);
   padding: 8px;
   margin-top: 5px;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  color: #0056b3; /* Blue font color */
+  color: #2b7e57; /* Blue font color */
 }
 
 input[type="radio"] {
@@ -79,7 +78,7 @@ button {
   border-radius: 4px;
   cursor: pointer;
   background-color: #f5f5f5;
-  color: #0056b3; /* Blue font color */
+  color: #2b7e57; /* Blue font color */
 }
 
 button[type="submit"] {
@@ -106,8 +105,21 @@ table {
   width: 100%;
   margin: 10px auto;
   border-collapse: collapse;
-  font-size: 14px;
-  color: #0056b3; /* Blue font color */
+  font-size: 50%;
+  color: #2b7e57; /* Blue font color */
+}
+
+table td:first-child  {
+  border-left: none;
+  width: 8em;
+  min-width: 8em;
+  max-width: 8em;
+}
+table td:nth-child(2){
+  border-left: none;
+  width: 8em;
+  min-width: 8em;
+  max-width: 8em;
 }
 
 thead {
