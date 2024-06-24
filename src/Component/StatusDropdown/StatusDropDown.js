@@ -7,7 +7,7 @@ const StatusDropDown = ({ initialValue, options }) => {
 
     return (
         <select value={value} onChange={(e) => setValue(e.target.value)}>
-        <option value="InProgress">In Progress</option>
+        <option value="InProgress">Progress</option>
         <option value="Submitted">Submitted</option>
         <option value="Completed">Completed</option>
         <option value="Rejected">Rejected</option>

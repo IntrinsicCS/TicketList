@@ -62,13 +62,12 @@ import Select from 'react-select';
         isOpen =false;
         const requester = "testaccount@intrinsiccs.com";
         toggle();
-        console.log(recipient);
-        addRequest({ recipient:recipient.value,
-             workItem:workItem.value,
-             activity:activity.value,
-             role:role.value,
-             requestType:requestType.value, 
-             message, 
+        addRequest({ recipient:recipient.value?recipient.value:'-',
+             workItem:workItem.value?workItem.value:'-',
+             activity:activity.value?activity.value:'-',
+             role:role.value?role.value:'-',
+             requestType:requestType.value?requestType.value:'-', 
+             message:message?message:'-', 
              ticketNum, 
              formattedCreated, 
              requester:requester, });
