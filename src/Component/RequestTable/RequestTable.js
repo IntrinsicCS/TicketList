@@ -30,10 +30,12 @@ const columns = [{
     text: 'Recipient'
   }, {
     dataField: 'status',
-    text: 'Status'
+    text: 'Status',
+    style: { overflow: "visible" },
+      
   }];
 const RequestTable = ({ requests }) => {
-    const products = [ ...requests ];
+    const products = requests;
     return (
         <div className={"tabular-report"}>
         <BootstrapTable

@@ -3,31 +3,31 @@ import { v4 as uuid } from 'uuid';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, FormGroup, Input } from 'reactstrap';
 import Select from 'react-select';
     const requestTypeLists = [
-        { label: "Add Resource", value: "addresource" }, 
-        { label: "Remove Resource", value: "removeresource" }
-    ];
+        { label: "Add Resource", value: "Add Resource" }, 
+        { label: "Remove Resource", value: "Remove Resource" }
+    ]
     const recipientList = [
         { label: "Della Barr", value: "Della Barr" },
         { label: "Nellie Adams", value: "Nellie Adams" },
         { label: "Ray Moore", value: "Ray Moore" },
-    ];
+    ]
     const workItemtList = [
         { label: "ABC 3003", value: "ABC 3003" },
         { label: "PUP D5", value: "PUP D5" },
         { label: "Assay Study 1", value: "Assay Study 1" },
-    ];
+    ]
     const activityList = [
         { label: "Early Submission", value: "Early Submission" },
         { label: "Start-Up", value: "Start-Up" },
         { label: "In-Life", value: "In-Life" },
         { label: "Close-Out", value: "Close-Out" },
-    ];
+    ]
     const roleList = [
         { label: "Clinical Trial Manager", value: "Clinical Trial Manager" },
         { label: "Clinical Research Associate", value: "Clinical Research Associate" },
         { label: "Medical Writer", value: "Medical Writer" },
         { label: "Data Manager", value: "Data Manager" },
-    ];
+    ]
 
     const ResourceRequestForm = ({ addRequest, onClose, isOpen }) => {
 
@@ -62,7 +62,16 @@ import Select from 'react-select';
         isOpen =false;
         const requester = "testaccount@intrinsiccs.com";
         toggle();
-        addRequest({ recipient, workItem, activity, role, requestType, message, ticketNum, formattedCreated, requester });
+        console.log(recipient);
+        addRequest({ recipient:recipient.value,
+             workItem:workItem.value,
+             activity:activity.value,
+             role:role.value,
+             requestType:requestType.value, 
+             message, 
+             ticketNum, 
+             formattedCreated, 
+             requester:requester, });
     };
 
     return (
@@ -76,11 +85,15 @@ import Select from 'react-select';
                         classNamePrefix="multi-select"
                         isSearchable={true}
                         isMulti={false}
-                        isClearable={true}
                         value={recipient}
                         options={recipientList}
                         onChange={(selection) => {
-                            setRecipient(selection.value);             
+                            setRecipient(null);
+                            if (selection){
+                                window.setTimeout(() => {
+                                    setRecipient(selection);
+                                }, 0);
+                            }                         
                         }}
                         placeholder="Recipient"
                     />
@@ -95,7 +108,12 @@ import Select from 'react-select';
                         value={workItem}
                         options={workItemtList}
                         onChange={(selection) => {
-                            setWorkItem(selection.value);     
+                            setWorkItem(null);
+                            if (selection){
+                                window.setTimeout(() => {
+                                    setWorkItem(selection);
+                                }, 0);
+                            }                         
                         }}
                         placeholder="Select WorkItem"
                     />
@@ -110,7 +128,12 @@ import Select from 'react-select';
                         value={activity}
                         options={activityList}
                         onChange={(selection) => {
-                            setActivity(selection.value);    
+                            setActivity(null);
+                            if (selection){
+                                window.setTimeout(() => {
+                                    setActivity(selection);
+                                }, 0);
+                            }                         
                         }}
                         placeholder="Select Activity"
                     />
@@ -125,7 +148,12 @@ import Select from 'react-select';
                         value={role}
                         options={roleList}
                         onChange={(selection) => {
-                            setRole(selection.value);                
+                            setRole(null);
+                            if (selection){
+                                window.setTimeout(() => {
+                                    setRole(selection);
+                                }, 0);
+                            }                         
                         }}
                         placeholder="Select Role"
                     />
@@ -139,7 +167,12 @@ import Select from 'react-select';
                         isMulti={false}
                         value={requestType}
                         onChange={(selection) => {
-                            setRequestType(selection.value);                     
+                            setRequestType(null);
+                            if (selection){
+                                window.setTimeout(() => {
+                                    setRequestType(selection);
+                                }, 0);
+                            }                         
                         }}
                         options={requestTypeLists}
                         placeholder="Select Request Types"
