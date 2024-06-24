@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import ResourceRequestForm from './ResourceRequestForm';
-import RequestTable from './RequestTable';
+import ResourceRequestForm from './Component/ResourceRequestForm/ResourceRequestForm';
+import RequestTable from './Component/RequestTable/RequestTable';
 
 function App() {
   const [requests, setRequests] = useState([]);
@@ -31,15 +31,13 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        {!isFormVisible && (
+      <RequestTable requests={requests} />
           <button onClick={handleCreateTicket} className="create-ticket-button">
             Request Resource
           </button>
-        )}
         {isFormVisible && (
           <ResourceRequestForm addRequest={addRequest} onClose={handleCloseForm} isOpen={isFormVisible} />
         )}
-        <RequestTable requests={requests} />
       </header>
     </div>
   );

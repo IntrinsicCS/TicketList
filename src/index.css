@@ -9,8 +9,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
-  font-size: 16px;
+  /* font-size: 16px; */
   color: #333;
   padding: 20px;
 }
@@ -30,7 +29,10 @@ form {
   text-align: left;
   color: #2b7e57; /* Blue font color */
 }
-
+.primary{
+  background-color: #8fc73d!important;
+  border: #8fc73d!important;
+}
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -54,7 +56,6 @@ form {
 
 label {
   display: block;
-  margin-bottom: 10px;
 }
 
 select, textarea, input[type="text"] {
@@ -81,17 +82,75 @@ button {
   color: #2b7e57; /* Blue font color */
 }
 
-button[type="submit"] {
+/* button[type="submit"] {
   background-color: #333;
   color: white;
 }
 
 button[type="button"] {
   background-color: #ccc;
+} */
+.table thead th, .table-bordered thead th, .table-striped thead th {
+  border-bottom: 1px solid #ddd;
+  font-size: 14px;
+  vertical-align: top;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.table th.width-200, .table td.width-200, .table-bordered th.width-200, .table-bordered td.width-200, .table-striped th.width-200, .table-striped td.width-200 {
+  width: 200px;
+}
+.react-bootstrap-table th.sortable {
+  cursor: pointer;
+}
+.table-xs th, .table-xs td {
+  padding: 3px 5px;
+  height: auto;
+}
+.table th, .table td, .table-bordered th, .table-bordered td, .table-striped th, .table-striped td {
+  line-height: 21px;
+}
+.table-bordered th, .table-bordered td {
+  border: 1px solid #dee2e6;
+}
+th {
+  text-align: -webkit-match-parent;
+}
+.table th.width-100, .table td.width-100, .table-bordered th.width-100, .table-bordered td.width-100, .table-striped th.width-100, .table-striped td.width-100 {
+  width: 100px;
+}
+.table th.width-200, .table td.width-200, .table-bordered th.width-200, .table-bordered td.width-200, .table-striped th.width-200, .table-striped td.width-200 {
+  width: 200px;
+}
+.table th.readonly, .table td.readonly, .table-bordered th.readonly, .table-bordered td.readonly, .table-striped th.readonly, .table-striped td.readonly {
+  cursor: auto;
+}
+.tabular-report{
+  width: 100%;
 }
 
+.table tbody tr td, .table-bordered tbody tr td, .table-striped tbody tr td {
+  font-size: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.table-xs th, .table-xs td {
+  padding: 3px 5px;
+  height: auto;
+}
+.table th, .table td, .table-bordered th, .table-bordered td, .table-striped th, .table-striped td {
+  padding: 6px;
+  height: 32px;
+  line-height: 21px;
+  cursor: default;
+}
+.table-bordered th, .table-bordered td {
+  border: 1px solid #dee2e6;
+}
 .create-ticket-button {
-  background-color: #2b7e57;
+  background-color: #8cbb45;
   color: white;
   padding: 10px 20px;
   border: none;
@@ -101,50 +160,10 @@ button[type="button"] {
   align-self: flex-start;
 }
 
-table {
-  width: 100%;
-  margin: 10px auto;
-  border-collapse: collapse;
-  font-size: 50%;
-  color: #2b7e57; /* Blue font color */
+.table-xs th td{
+        padding: 3px 5px;
+        height: auto;
 }
-
-table td:first-child  {
-  border-left: none;
-  width: 8em;
-  min-width: 8em;
-  max-width: 8em;
-}
-table td:nth-child(2){
-  border-left: none;
-  width: 8em;
-  min-width: 8em;
-  max-width: 8em;
-}
-
-thead {
-  background-color: #f5f5f5;
-}
-
-th, td {
-  border: 1px solid #ddd;
-  padding: 10px;
-  text-align: left;
-}
-
-th {
-  background-color: #18aa99;
-  color: white;
-}
-
-tr:nth-child(even) {
-  background-color: #f9f9f9;
-}
-
-tr:hover {
-  background-color: #f1f1f1;
-}
-
 .status-badge {
   display: inline-block;
   padding: 5px 10px;
