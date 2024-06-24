@@ -31,10 +31,12 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-      <RequestTable requests={requests} />
-          <button onClick={handleCreateTicket} className="create-ticket-button">
+        <div className='align-centers'>
+        <button onClick={handleCreateTicket} className="create-ticket-button">
             Request Resource
           </button>
+        </div>
+          <RequestTable requests={requests} />
         {isFormVisible && (
           <ResourceRequestForm addRequest={addRequest} onClose={handleCloseForm} isOpen={isFormVisible} />
         )}

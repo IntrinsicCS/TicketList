@@ -5,29 +5,29 @@ import Select from 'react-select';
     const requestTypeLists = [
         { label: "Add Resource", value: "addresource" }, 
         { label: "Remove Resource", value: "removeresource" }
-    ]
+    ];
     const recipientList = [
         { label: "Della Barr", value: "Della Barr" },
         { label: "Nellie Adams", value: "Nellie Adams" },
         { label: "Ray Moore", value: "Ray Moore" },
-    ]
+    ];
     const workItemtList = [
         { label: "ABC 3003", value: "ABC 3003" },
         { label: "PUP D5", value: "PUP D5" },
         { label: "Assay Study 1", value: "Assay Study 1" },
-    ]
+    ];
     const activityList = [
         { label: "Early Submission", value: "Early Submission" },
         { label: "Start-Up", value: "Start-Up" },
         { label: "In-Life", value: "In-Life" },
         { label: "Close-Out", value: "Close-Out" },
-    ]
+    ];
     const roleList = [
         { label: "Clinical Trial Manager", value: "Clinical Trial Manager" },
         { label: "Clinical Research Associate", value: "Clinical Research Associate" },
         { label: "Medical Writer", value: "Medical Writer" },
         { label: "Data Manager", value: "Data Manager" },
-    ]
+    ];
 
     const ResourceRequestForm = ({ addRequest, onClose, isOpen }) => {
 
@@ -76,9 +76,12 @@ import Select from 'react-select';
                         classNamePrefix="multi-select"
                         isSearchable={true}
                         isMulti={false}
+                        isClearable={true}
                         value={recipient}
                         options={recipientList}
-                        onChange={(e) => setRecipient(e.target.value)}
+                        onChange={(selection) => {
+                            setRecipient(selection.value);             
+                        }}
                         placeholder="Recipient"
                     />
                 </FormGroup>
@@ -91,7 +94,9 @@ import Select from 'react-select';
                         isMulti={false}
                         value={workItem}
                         options={workItemtList}
-                        onChange={(e) => setWorkItem(e.target.value)}
+                        onChange={(selection) => {
+                            setWorkItem(selection.value);     
+                        }}
                         placeholder="Select WorkItem"
                     />
                 </FormGroup>
@@ -104,7 +109,9 @@ import Select from 'react-select';
                         isMulti={false}
                         value={activity}
                         options={activityList}
-                        onChange={(e) => setActivity(e.target.value)}
+                        onChange={(selection) => {
+                            setActivity(selection.value);    
+                        }}
                         placeholder="Select Activity"
                     />
                 </FormGroup>
@@ -117,7 +124,9 @@ import Select from 'react-select';
                         isMulti={false}
                         value={role}
                         options={roleList}
-                        onChange={(e) => setRole(e.target.value)}
+                        onChange={(selection) => {
+                            setRole(selection.value);                
+                        }}
                         placeholder="Select Role"
                     />
                 </FormGroup>
@@ -129,7 +138,9 @@ import Select from 'react-select';
                         isSearchable={true}
                         isMulti={false}
                         value={requestType}
-                        onChange={(e) => setRequestType(e.target.value)}
+                        onChange={(selection) => {
+                            setRequestType(selection.value);                     
+                        }}
                         options={requestTypeLists}
                         placeholder="Select Request Types"
                     />
